@@ -58,15 +58,20 @@ public:
 	}
 	vector<int> sol;
 	vector<int> largestValues3(TreeNode* root){
+		if(root==NULL){
+			return sol;
+		}
 		helper3(root,0);
 		return sol;
 	}
 	void helper3(TreeNode* node, int d){
 		if(node==NULL) return;
-		if(d==sol.size()){
+		if(sol.size()<=d){
 			sol.push_back(node->val);
-		}else if(sol[d]<node->val){
-			sol[d]=node->val;
+		}else{
+			if(sol[d]<node->val){
+				sol[d]=node->val;
+			}
 		}
 		helper3(node->left,d+1);
 		helper3(node->right,d+1);
