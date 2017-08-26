@@ -8,7 +8,7 @@ struct TreeNode {
 	TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 };
 
-class Solution {
+class MergeTwoBinaryTrees {
 public:
 	TreeNode* mergeTrees(TreeNode* t1, TreeNode* t2) {
 		if(t1==NULL) return t2;
