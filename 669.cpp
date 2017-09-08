@@ -8,7 +8,7 @@ struct TreeNode {
 	TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 };
 
- class Solution {
+class TrimBST {
 public:
 	TreeNode* trimBST(TreeNode* root, int L, int R) {
 		if(root==NULL) return NULL;
