@@ -3,15 +3,15 @@ using namespace std;
 
 class WaterFlow {
 public:
-	vector<pair<int, int>> pacificAtlantic(vector<vector<int>> &matrix) {
-		vector<pair<int, int>> ret;
+	vector<pair<int, int> > pacificAtlantic(vector<vector<int> > &matrix) {
+		vector<pair<int, int> > ret;
 		int y = matrix.size();
 		if (y == 0)
 			return ret;
 		int x = matrix[0].size();
 		if (x == 0)
 			return ret;
-		vector<vector<bool>> pac(y, vector<bool>(x, false)), atl(y, vector<bool>(x, false));
+		vector<vector<bool> > pac(y, vector<bool>(x, false)), atl(y, vector<bool>(x, false));
 		bool rem = true;
 		while (rem) {
 			rem = false;
@@ -69,8 +69,8 @@ public:
 		return ret;
 	}
 
-	vector<pair<int, int>> pacificAtlanticDFS(vector<vector<int>> &matrix) {
-		vector<pair<int, int>> ret;
+	vector<pair<int, int> > pacificAtlanticDFS(vector<vector<int> > &matrix) {
+		vector<pair<int, int> > ret;
 		int y = matrix.size();
 		if (y == 0)
 			return ret;
@@ -78,7 +78,7 @@ public:
 		if (x == 0)
 			return ret;
 
-		vector<vector<bool>> pac(y, vector<bool>(x, false)), atl(y, vector<bool>(x, false));
+		vector<vector<bool> > pac(y, vector<bool>(x, false)), atl(y, vector<bool>(x, false));
 		for (int j = 0; j < x; j++) {
 			dfs(matrix, pac, INT_MIN, 0, j);
 			dfs(matrix, atl, INT_MIN, y - 1, j);
@@ -99,7 +99,7 @@ public:
 
 	int dir[4][2] = {{-1, 0}, {0, -1}, {1, 0}, {0, 1}};
 
-	void dfs(vector<vector<int>> &matrix, vector<vector<bool>> &visited, int h, int i, int j) {
+	void dfs(vector<vector<int> > &matrix, vector<vector<bool> > &visited, int h, int i, int j) {
 		int x = matrix[0].size(), y = matrix.size();
 		if (i < 0 || i >= y || j < 0 || j >= x || visited[i][j] || matrix[i][j] < h)
 			return;

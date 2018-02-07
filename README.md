@@ -1,2 +1,3 @@
-# LeetCode
-my leetcode solution
+# Online Judge
+my OJ solutions
+
